@@ -1,6 +1,6 @@
-import { Module } from '@nestjs/common';
-import { BitcoinController } from './bitcoin.controller';
-import { BitcoinService } from './bitcoin.service';
+import { Module } from '@nestjs/common'
+import { BitcoinController } from './bitcoin.controller'
+import { BitcoinService } from './bitcoin.service'
 
 @Module({
   imports: [],

@@ -1,5 +1,5 @@
-import { Controller, Get } from '@nestjs/common';
-import { BitcoinService } from './bitcoin.service';
+import { Controller, Get } from '@nestjs/common'
+import { BitcoinService } from './bitcoin.service'
 
 @Controller('/bitcoin')
 export class BitcoinController {
@@ -7,11 +7,11 @@ export class BitcoinController {
 
   @Get()
   getHello(): string {
-    return this.BitcoinService.getHello();
+    return this.BitcoinService.getHello()
   }
 
   @Get('/hi')
   getHi(): string {
-    return 'Hi bitcoin';
+    return 'Hi'
   }
 }
