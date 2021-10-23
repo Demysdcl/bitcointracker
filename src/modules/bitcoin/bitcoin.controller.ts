@@ -1,4 +1,4 @@
-import { Controller, Get, Post } from '@nestjs/common'
+import { Controller, Get } from '@nestjs/common'
 import { BitcoinService } from './bitcoin.service'
 
 @Controller('/bitcoin')
@@ -7,13 +7,7 @@ export class BitcoinController {
 
   @Get()
   async getBitcoinValue(): Promise<any> {
-    
     return this.bitcoinService.getBitcoinValue()
-  }
-
-  @Post()
-  testPost(): any {
-    return { test: 'init' }
   }
 
   @Get('/hi')
