@@ -1,11 +1,12 @@
-import { HttpService } from '@nestjs/axios'
 import { Injectable } from '@nestjs/common'
+import { MercadobitService } from './mercadobit.service'
 
 @Injectable()
 export class BitcoinService {
-  constructor(private readonly httpService: HttpService) {}
+  constructor(private readonly mercadobitService: MercadobitService) {}
 
-  getHello(): string {
-    return this.httpService
+  async getBitcoinValue(): Promise<any> {
+    //TODO incluir os calculos
+    return this.mercadobitService.getBitcoinValue()
   }
 }

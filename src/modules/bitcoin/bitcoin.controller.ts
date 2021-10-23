@@ -1,17 +1,17 @@
-import { Controller, Get } from '@nestjs/common';
-import { BitcoinService } from './bitcoin.service';
+import { Controller, Get } from '@nestjs/common'
+import { BitcoinService } from './bitcoin.service'
 
 @Controller('/bitcoin')
 export class BitcoinController {
-  constructor(private readonly BitcoinService: BitcoinService) {}
+  constructor(private readonly bitcoinService: BitcoinService) {}
 
   @Get()
-  getHello(): string {
-    return this.BitcoinService.getHello();
+  async getBitcoinValue(): Promise<any> {
+    return this.bitcoinService.getBitcoinValue()
   }
 
   @Get('/hi')
   getHi(): string {
-    return 'Hi bitcoin';
+    return 'Hi bitcoin'
   }
 }
