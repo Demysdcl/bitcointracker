@@ -1,4 +1,5 @@
 import { Body, Controller, Get, Post, Put } from '@nestjs/common'
+import { Bitcoin } from './Bitcoin'
 import { BitcoinService } from './bitcoin.service'
 import { CreateBitCoinDTO } from './dto/create-bitcoin.dto'
 import { UpdateBitCoinDTO } from './dto/update-bitcoin.dto'
@@ -18,12 +19,12 @@ export class BitcoinController {
   }
 
   @Post()
-  async create(@Body() createBitcoinDTO: CreateBitCoinDTO): Promise<any> {
-    return createBitcoinDTO
+  async create(@Body() createBitcoinDTO: CreateBitCoinDTO): Promise<Bitcoin> {
+    return createBitcoinDTO as Bitcoin
   }
 
   @Put()
-  async update(@Body() updateBitcoinDTO: UpdateBitCoinDTO): Promise<any> {
-    return updateBitcoinDTO
+  async update(@Body() updateBitcoinDTO: UpdateBitCoinDTO): Promise<Bitcoin> {
+    return updateBitcoinDTO as Bitcoin
   }
 }

@@ -2,7 +2,9 @@ import { IsDateString, IsNumber } from 'class-validator'
 import { IsObjectId } from 'class-validator-mongo-object-id'
 
 export class UpdateBitCoinDTO {
-  @IsObjectId()
+  @IsObjectId({
+    message: 'Invalid _id',
+  })
   _id: string
 
   @IsNumber()
