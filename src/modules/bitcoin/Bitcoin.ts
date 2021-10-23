@@ -1,6 +1,7 @@
 export class Bitcoin {
-  fractionQty: number;
-  purchaseValue: number;
-  bitcoinValue: number;
-  purchaseDate: number;
+  _id: string
+  fractionQty: number
+  purchaseValue: number
+  bitcoinValue: number
+  purchaseDate: number
 }

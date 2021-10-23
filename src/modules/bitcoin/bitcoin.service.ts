@@ -6,6 +6,7 @@ export class BitcoinService {
   constructor(private readonly httpService: HttpService) {}
 
   getHello(): string {
-    return this.httpService
+    // return this.httpService
+    return 'teste'
   }
 }
