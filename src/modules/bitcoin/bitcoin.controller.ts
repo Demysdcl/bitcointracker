@@ -6,12 +6,7 @@ export class BitcoinController {
   constructor(private readonly bitcoinService: BitcoinService) {}
 
   @Get()
-  async getBitcoinValue(): Promise<any> {
+  async getBitcoinValue(): Promise<number> {
     return this.bitcoinService.getBitcoinValue()
-  }
-
-  @Get('/hi')
-  getHi(): string {
-    return 'Hi bitcoin'
   }
 }
