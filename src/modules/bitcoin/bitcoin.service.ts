@@ -5,8 +5,8 @@ import { MercadobitService } from './mercadobit.service'
 export class BitcoinService {
   constructor(private readonly mercadobitService: MercadobitService) {}
 
-  async getBitcoinValue(): Promise<any> {
-    //TODO incluir os calculos
-    return this.mercadobitService.getBitcoinValue()
+  async getBitcoinValue(): Promise<number> {
+    const bitcoin = await this.mercadobitService.getBitcoinValue()
+    return bitcoin.ticker[0].buy
   }
 }
