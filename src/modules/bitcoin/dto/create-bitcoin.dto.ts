@@ -1,8 +1,7 @@
-import { IsDateString, IsNumber, IsPositive } from 'class-validator'
+import { IsDateString, IsNumber } from 'class-validator'
 
 export class CreateBitCoinDTO {
   @IsNumber()
-  @IsPositive()
   fractionQty: number
 
   @IsNumber()
