@@ -34,17 +34,17 @@ export class BitcoinService {
   async getDashboard(): Promise<Dashboard> {
     const bitcoins = await this.bitcoinModel.find().exec()
 
-    const totalInvested = bitcoins.reduce(
-      (acc: number, acur: Bitcoin) => (acc += acur.purchaseValue),
-      0,
-    )
+    const reducer = (acc: Dashboard, cur: Bitcoin): Dashboard => ({
+      fractions: acc.fractions + cur.fractionQty,
+      totalInvested: acc.totalInvested + cur.purchaseValue,
+    })
 
-    const fractions = bitcoins.reduce(
-      (acc: number, acur: Bitcoin) => (acc += acur.fractionQty),
-      0,
-    )
+    const dashboard = bitcoins.reduce(reducer, {
+      fractions: 0,
+      totalInvested: 0,
+    } as Dashboard)
 
-    return { totalInvested, fractions }
+    return dashboard
   }
 
   async create(createBitCoinDto: CreateBitCoinDTO): Promise<BitcoinDocument> {
