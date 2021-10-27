@@ -39,12 +39,10 @@ export class BitcoinService {
       totalInvested: acc.totalInvested + cur.purchaseValue,
     })
 
-    const dashboard = bitcoins.reduce(reducer, {
+    return bitcoins.reduce(reducer, {
       fractions: 0,
       totalInvested: 0,
     } as Dashboard)
-
-    return dashboard
   }
 
   async create(createBitCoinDto: CreateBitCoinDTO): Promise<BitcoinDocument> {
